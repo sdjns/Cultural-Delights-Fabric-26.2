@@ -5,6 +5,8 @@
 ## [0.17.8+26.2] - 2026-10-24
 
 ### 新增
+- 使用 scoop 安装 Git 2.56 并初始化仓库（`.gitattributes` 统一 LF）
+- 新增 `一键备份.cmd` / `snapshot.ps1` 与 `docs/维护手册.md`
 - 从 1.21.1 / NeoForge 移植到 **26.2 / Fabric**：
   - 21 个方块、66 个物品、创造模式标签页
   - 鳄梨树与野生作物世界生成（8 个 worldgen JSON + Fabric 群系注入）
