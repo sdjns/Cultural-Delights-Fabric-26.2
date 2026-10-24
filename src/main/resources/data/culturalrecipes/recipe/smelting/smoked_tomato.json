@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": "farmersdelight:tomato",
+  "result": {
+    "count": 1,
+    "id": "culturaldelights:smoked_tomato"
+  },
+  "experience": 0.35,
+  "cookingtime": 100,
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    }
+  ]
+}

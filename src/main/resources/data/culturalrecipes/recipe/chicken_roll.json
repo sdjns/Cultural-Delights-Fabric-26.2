@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " ! ",
+    "@?@",
+    "###"
+  ],
+  "key": {
+    "#": "minecraft:dried_kelp",
+    "@": "farmersdelight:cooked_rice",
+    "?": "#culturaldelights:cooked_chickens",
+    "!": "minecraft:beetroot"
+  },
+  "result": {
+    "count": 1,
+    "id": "culturaldelights:chicken_roll"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    }
+  ]
+}

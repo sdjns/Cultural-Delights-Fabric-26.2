@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "culturaldelights:tortilla",
+    "#c:foods/cooked_mutton",
+    "#c:foods/leafy_green",
+    "#c:crops/onion"
+  ],
+  "result": {
+    "count": 1,
+    "id": "farmersdelight:mutton_wrap"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    }
+  ]
+}

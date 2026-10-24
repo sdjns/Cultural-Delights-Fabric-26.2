@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:dried_kelp",
+    "farmersdelight:cooked_rice",
+    "#c:foods/cooked_egg",
+    "#c:foods/cooked_egg",
+    "#c:foods/cooked_egg"
+  ],
+  "result": {
+    "count": 4,
+    "id": "culturaldelights:egg_roll"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    }
+  ]
+}

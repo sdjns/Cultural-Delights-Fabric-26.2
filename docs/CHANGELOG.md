@@ -2,6 +2,19 @@
 
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号遵循语义化版本。
 
+## [0.18.0+26.2] - 2026-10-24
+
+### 新增
+- **重新启用 32 条 Farmer's Delight 联动配方**（切割板 15 条、厨锅 5 条、合成/熔炼 10 条、覆盖 FD 原配方 2 条），并适配重织版 26.2 格式：
+  - 切割工具：`#c:tools/knife`、`{"fabric:type": "farmersdelight:item_ability", ...}`
+  - 音效：字符串 `"minecraft:item.axe.strip"`
+  - 标签：`c:foods/milk` → `c:drinks/milk`
+- 所有 FD 配方都带 `fabric:all_mods_loaded` 条件：**没装 FD 时自动跳过**
+
+### 验证
+- 装《重织》26.2-3.6.29：45 个模组，1968 个配方，0 ERROR
+- 不装 FD：1622 个配方，0 ERROR
+
 ## [0.17.9+26.2] - 2026-10-24
 
 ### 变更

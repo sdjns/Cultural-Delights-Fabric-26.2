@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "minecraft:stick"
+  },
+  "cookingtime": 400,
+  "experience": 2,
+  "ingredients": [
+    "#c:drinks/milk",
+    "#c:crops/corn",
+    "#c:crops/onion"
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "culturaldelights:elote"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    }
+  ]
+}

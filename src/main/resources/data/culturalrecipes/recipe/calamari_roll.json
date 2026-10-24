@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:dried_kelp",
+    "farmersdelight:cooked_rice",
+    "culturaldelights:raw_calamari",
+    "culturaldelights:raw_calamari"
+  ],
+  "result": {
+    "count": 2,
+    "id": "culturaldelights:calamari_roll"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    }
+  ]
+}

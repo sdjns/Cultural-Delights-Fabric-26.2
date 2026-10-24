@@ -16,9 +16,9 @@
 | 方块 / 物品注册 | ✅ 21 个方块、66 个物品（含 3 种种子、17 个方块物品） |
 | 资源（贴图/模型/语言/物品模型定义） | ✅ 117 张材质、12 种语言、66 个 `items/*.json`（26.2 新格式） |
 | 世界生成 | ✅ 鳄梨树（丛林类群系）、野生黄瓜/玉米/茄子（对应群系），共 8 个 feature JSON + Fabric 群系注入 |
-| 配方 | ⚠️ 保留了 37 个不依赖 Farmer's Delight 的配方；其余见下 |
+| 配方 | ✅ 37 个通用配方 + 32 个 FD 联动配方（装 FD 时生效） |
 | 鱿鱼掉落 | ✅ 保留原版墨囊（1–3，受抢夺影响）+ 模组的生鱿鱼/发光鱿鱼物品 |
-| Farmer's Delight 联动 | ⚠️ 可与《重织》26.2 共存（实测 0 ERROR）；切割/厨锅配方待改写 |
+| Farmer's Delight 联动 | ✅ 与《重织》26.2 共存 + 32 条切割/厨锅配方已启用（两种环境均 0 ERROR） |
 
 ## 与 Farmer's Delight（重织 / Refabricated）的关系
 
@@ -30,7 +30,7 @@ Cultural Delights 是 Farmer's Delight 的附属模组，1.21.1 源码里大量�
 
 - **可以同时安装运行**：用 26.2-3.6.29 实测，45 个模组一起启动，服务器 **0 个 ERROR**；
 - 本模组**不硬依赖** FD，单独装也能玩；装了 FD 后 `fabric.mod.json` 里把它标为推荐依赖（`recommends`），不会强制；
-- **切割板 / 厨锅联动配方暂未启用**：重织版的配方格式和 1.21.1 不一样（`tool` 要带 `fabric:type`、`sound` 改字符串、部分 `c:` 标签改名），1.21.1 的原配方直接放回去会解析失败，需要逐条改写；原始 JSON 保留在 `fd_recipe_backup/`。
+- **切割板 / 厨锅联动已启用**：32 条 FD 配方已按重织版 26.2 格式改写完成（`tool` 用 `fabric:type` / `#c:tools/knife`、`sound` 改字符串、`c:foods/milk` → `c:drinks/milk`），并加了 `fabric:all_mods_loaded` 条件——没装 FD 时自动跳过，不报错。
 
 | 原 FD 内容 | 本移植的处理 |
 | --- | --- |
@@ -82,7 +82,7 @@ cd-26.2/
 
 ## 已知差异 / 后续工作
 
-1. **补 FD 配方联动**：《重织》26.2 已可用，但配方格式变了（`tool` 需 `fabric:type`、`sound` 改字符串、部分 `c:` 标签改名），需要逐条改写 `fd_recipe_backup/` 里的 32 条配方；改好后加 `fabric:all_mods_loaded` 条件即可安全放回。
+1. **FD 发酵桶配方**：`fermenting/pickle.json` 依赖 Brewin' and Chewin，该模组暂无 26.2 版本，暂未启用。
 2. **效果组件**：26.2 的食物效果通过 `DataComponents.CONSUMABLE` 的 `Consumable` 提供，可按需补回"滋养"等效果。
 3. **盛宴方块**：当前是简化版（无盘子掉落、无比较器细节），可继续补齐。
 4. **客户端渲染**：26.2 的方块渲染层由模型自动推断，旧代码里的 `ItemBlockRenderTypes.setRenderLayer` 已删除；未在客户端实机验证画面。

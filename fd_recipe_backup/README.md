@@ -1,14 +1,22 @@
-# Farmer's Delight 依赖配方备份
+# Farmer's Delight 配方原始备份（1.21.1 格式）
 
-这些配方在 1.21.1 版本里使用 Farmer's Delight / Brewin' and Chewin 的配方类型或物品
-（`farmersdelight:cooking`、`farmersdelight:cutting`、`brewinandchewin:fermenting`、
-`farmersdelight:knife` 等），在 26.2 上暂时无法生效，因此没有放进 `src/main/resources`。
+⚠️ 这里的 JSON 是**1.21.1 / NeoForge 时代的原始格式**，仅作历史参考。
 
-等 Farmer's Delight 发布 26.2 版本后，把本目录内容拷回：
+从 **0.18.0+26.2** 起，32 条配方已按《农夫乐事：重织》26.2 的格式改写并放回：
 
 ```
-fd_recipe_backup/culturalrecipes/recipe/  ->  src/main/resources/data/culturalrecipes/recipe/
-fd_recipe_backup/farmersdelight/          ->  src/main/resources/data/farmersdelight/
+src/main/resources/data/culturalrecipes/recipe/{cooking,cutting,smelting,...}
+src/main/resources/data/farmersdelight/recipe/...
 ```
 
-并把 `SimpleFeastBlock` / `WildCropBlock` 换回 FD 的 `FeastBlock` / `WildCropBlock` 即可恢复完整联动。
+它们都带：
+
+```json
+"fabric:load_conditions": [
+  { "condition": "fabric:all_mods_loaded", "values": ["farmersdelight"] }
+]
+```
+
+所以没装 FD 时会被跳过，不会报错。
+
+唯一没有启用的：`fermenting/pickle.json` —— 它依赖 Brewin' and Chewin，该模组暂无 26.2 版本。
