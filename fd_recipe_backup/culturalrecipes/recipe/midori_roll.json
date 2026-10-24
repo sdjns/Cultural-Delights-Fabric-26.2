@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " ! ",
+    "@?@",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:dried_kelp"
+    },
+    "@": {
+      "item": "farmersdelight:cooked_rice"
+    },
+    "?": {
+      "tag": "c:crops/avocado"
+    },
+    "!": {
+      "tag": "c:crops/cucumber"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "culturaldelights:midori_roll"
+  }
+}

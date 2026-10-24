@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": "culturaldelights:avocado"
+  },
+  "result": {
+    "count": 1,
+    "id": "culturaldelights:avocado_crate"
+  }
+}

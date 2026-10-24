@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": "culturaldelights:corn_cob"
+  },
+  "result": {
+    "count": 1,
+    "id": "culturaldelights:corn_cob_crate"
+  }
+}

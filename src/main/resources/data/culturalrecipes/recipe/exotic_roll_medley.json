@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "culturaldelights:chicken_roll_slice",
+    "culturaldelights:chicken_roll_slice",
+    "culturaldelights:chicken_roll_slice",
+    "culturaldelights:tropical_roll",
+    "culturaldelights:tropical_roll",
+    "culturaldelights:tropical_roll",
+    "culturaldelights:pufferfish_roll",
+    "minecraft:bowl",
+    "culturaldelights:pufferfish_roll"
+  ],
+  "result": {
+    "count": 1,
+    "id": "culturaldelights:exotic_roll_medley"
+  }
+}

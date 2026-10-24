@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": "culturaldelights:white_eggplant"
+  },
+  "result": {
+    "count": 1,
+    "id": "culturaldelights:white_eggplant_crate"
+  }
+}
