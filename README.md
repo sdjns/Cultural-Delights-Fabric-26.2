@@ -82,8 +82,8 @@ cd-26.2/
 
 ## 已知差异 / 后续工作
 
-1. **装回 FD 联动**：FD 发布 26.2 后，把 `fd_recipe_backup/` 里的配方放回 `data/culturalrecipes/recipe/`，并把 `FeastBlock`/`WildCropBlock` 换回 FD 实现即可恢复完整玩法。
+1. **补 FD 配方联动**：《重织》26.2 已可用，但配方格式变了（`tool` 需 `fabric:type`、`sound` 改字符串、部分 `c:` 标签改名），需要逐条改写 `fd_recipe_backup/` 里的 32 条配方；改好后加 `fabric:all_mods_loaded` 条件即可安全放回。
 2. **效果组件**：26.2 的食物效果通过 `DataComponents.CONSUMABLE` 的 `Consumable` 提供，可按需补回"滋养"等效果。
 3. **盛宴方块**：当前是简化版（无盘子掉落、无比较器细节），可继续补齐。
 4. **客户端渲染**：26.2 的方块渲染层由模型自动推断，旧代码里的 `ItemBlockRenderTypes.setRenderLayer` 已删除；未在客户端实机验证画面。
-5. **未移植**：FD 刀具/切割板、厨锅、发酵桶、苹果皮/JEI 联动、NeoForge 数据包（堆肥/燃料）→ 26.2 下分别对应 Fabric 的 `CompostingChanceRegistry`/`FuelValueRegistry`，可另行补充。
+5. **未移植**：FD 刀具/切割板、厨锅、发酵桶配方，苹果皮/JEI 联动，以及 NeoForge 的数据包（堆肥/燃料）→ 26.2 下分别对应 Fabric 的 `CompostingChanceRegistry`/`FuelValueRegistry`，可另行补充。
