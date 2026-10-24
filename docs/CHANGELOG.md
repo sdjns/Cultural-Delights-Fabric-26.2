@@ -2,6 +2,16 @@
 
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号遵循语义化版本。
 
+## [0.17.9+26.2] - 2026-10-24
+
+### 变更
+- 明确与《农夫乐事：重织》(Farmer's Delight Refabricated) **26.2-3.6.29** 的兼容关系：已实测 45 个模组共存、服务端 0 ERROR
+- `fabric.mod.json` 增加 `recommends: farmersdelight >= 26.2`，并更新模组简介
+- 更新 README / 维护手册中关于 FD 的说明
+
+### 说明
+- 切割板 / 厨锅配方因重织版配方格式变化，暂未启用（原始 JSON 在 `fd_recipe_backup/`）
+
 ## [0.17.8+26.2] - 2026-10-24
 
 ### 新增

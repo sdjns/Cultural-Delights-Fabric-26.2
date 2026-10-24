@@ -12,23 +12,25 @@
 | --- | --- |
 | `gradle build` | ✅ 通过，产出 `build/libs/culturaldelights-0.17.8+26.2.jar` |
 | 专用服务器启动（`gradle runServer`） | ✅ 通过，0 个 ERROR（配方/战利品表/标签/世界生成全部加载成功） |
+| 与《农夫乐事：重织》26.2 同时启动 | ✅ 45 个模组共存，0 个 ERROR |
 | 方块 / 物品注册 | ✅ 21 个方块、66 个物品（含 3 种种子、17 个方块物品） |
 | 资源（贴图/模型/语言/物品模型定义） | ✅ 117 张材质、12 种语言、66 个 `items/*.json`（26.2 新格式） |
 | 世界生成 | ✅ 鳄梨树（丛林类群系）、野生黄瓜/玉米/茄子（对应群系），共 8 个 feature JSON + Fabric 群系注入 |
 | 配方 | ⚠️ 保留了 37 个不依赖 Farmer's Delight 的配方；其余见下 |
 | 鱿鱼掉落 | ✅ 保留原版墨囊（1–3，受抢夺影响）+ 模组的生鱿鱼/发光鱿鱼物品 |
-| Farmer's Delight 联动 | ❌ 无法移植（见下） |
+| Farmer's Delight 联动 | ⚠️ 可与《重织》26.2 共存（实测 0 ERROR）；切割/厨锅配方待改写 |
 
-## 最重要的前提：Farmer's Delight 还没有 26.2 版本
+## 与 Farmer's Delight（重织 / Refabricated）的关系
 
 Cultural Delights 是 Farmer's Delight 的附属模组，1.21.1 源码里大量使用 FD 的 API（`FeastBlock`、`WildCropBlock`、`ModBlocks.CARROT_CRATE`、`FoodValues`、`ModEffects.NOURISHMENT`…）。
 
-截至移植时：
+26.2 上已经有 **Farmer's Delight Refabricated（农夫乐事：重织）**：Modrinth 上的 `26.2-3.6.29+refabricated`，mod id 仍然是 `farmersdelight`。
 
-- FD 在 Modrinth 上最新版本仍只到 **1.21.1**；
-- FD 官方仓库有一个 **26.1** 开发分支，但还没有 26.2 发布，也没有可依赖的 Maven 产物。
+本移植的现状：
 
-因此本移植**移除了对 FD 的编译依赖**，改成自包含实现：
+- **可以同时安装运行**：用 26.2-3.6.29 实测，45 个模组一起启动，服务器 **0 个 ERROR**；
+- 本模组**不硬依赖** FD，单独装也能玩；装了 FD 后 `fabric.mod.json` 里把它标为推荐依赖（`recommends`），不会强制；
+- **切割板 / 厨锅联动配方暂未启用**：重织版的配方格式和 1.21.1 不一样（`tool` 要带 `fabric:type`、`sound` 改字符串、部分 `c:` 标签改名），1.21.1 的原配方直接放回去会解析失败，需要逐条改写；原始 JSON 保留在 `fd_recipe_backup/`。
 
 | 原 FD 内容 | 本移植的处理 |
 | --- | --- |
@@ -36,7 +38,7 @@ Cultural Delights 是 Farmer's Delight 的附属模组，1.21.1 源码里大量�
 | `WildCropBlock`（野生作物） | 自写 `WildCropBlock extends BushBlock`，掉落物走战利品表 |
 | `ModBlocks.CARROT_CRATE` 属性 | 改用 `Blocks.OAK_PLANKS` 的复制属性 |
 | `FoodValues` / `ModEffects.NOURISHMENT` | 食物数值全部保留；FD 的"滋养"效果、河豚卷的负面效果、发光鱿鱼的发光效果**未保留**（26.2 效果改为 `Consumable` 组件，需要额外数据组件代码） |
-| 刀具切割 / 厨锅 / 发酵桶配方 | **未移植**，原始 JSON 备份在 `fd_recipe_backup/`，等 FD 出了 26.2 版本可直接放回 |
+| 刀具切割 / 厨锅 / 发酵桶配方 | **暂未启用**，原始 JSON 备份在 `fd_recipe_backup/`，需按重织版格式改写后再放回 |
 
 > 关于鱿鱼：原版 1.21.1 模组直接把鱿鱼的掉落表整个替换成了 `culturaldelights:squid`，会吞掉墨囊。
 > 本移植在掉落表里**保留了两个池**：原版墨囊池（`ink_sac` 1–3，抢夺加成，与原版 26.2 完全一致）

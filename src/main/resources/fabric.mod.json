@@ -3,7 +3,7 @@
   "id": "culturaldelights",
   "version": "${version}",
   "name": "Cultural Delights",
-  "description": "A Farmer's Delight addon that adds food systems from around the world. Fabric 26.2 port.",
+  "description": "A Farmer's Delight addon that adds food systems from around the world. Fabric 26.2 port with optional Farmer's Delight Refabricated integration.",
   "authors": [
     "NCP Bails",
     "Raspmary",
@@ -26,5 +26,8 @@
     "minecraft": "~26.2",
     "java": ">=25",
     "fabric-api": "*"
+  },
+  "recommends": {
+    "farmersdelight": ">=26.2"
   }
 }
